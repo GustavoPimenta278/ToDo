@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font: normal, 15pt, Arial;
+    background-color: rgba(0, 0, 0, 0.89);
+    color: rgba(255, 255, 255, 0.911);
+}
+
+header {
+    width: 100vw;
+    height: 115px;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.781);
+    font-family: 'Poppins';
+}
+
+header .inner {
+    width: 81%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+header .logo {
+    display: table;
+    height: 100%;
+    float: left;
+}
+
+header .logo div {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+header .logo img {
+    width: 100%;
+    margin-top: 5px;
+}
+
+header nav {
+    float: right;
+    height: 100%;
+}
+
+header nav li {
+    display: table;
+    height: 100%;
+    float: left;
+    margin-right: 30px;
+}
+
+header nav li:last-of-type {
+    margin-right: 0
+}
+
+header nav span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+header nav .ButtonAdd {
+    background-color: #09f809b7;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+header nav .ButtonAdd:hover , .ButtonDelete:hover {
+    filter: brightness(2);
+}
+
+
+header nav .ButtonDelete {
+    background-color: #f80909dc;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}
