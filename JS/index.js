@@ -1,16 +1,21 @@
+const createTaskButton = document.getElementsByClassName("ButtonAdd")
+const deleteTaskButton = document.getElementsByClassName("ButtonDelete")
 
-function CreateTask() {
-    let task = {
-        id: id,
-        name: name,
-        description: description
-    }
+const newTask = document.createElement("div")
 
+function createTask() {
+     // create a new div element
+  const newDiv = document.createElement("div");
 
-    return task
+  // and give it some content
+  const newContent = document.createTextNode("Hi there and greetings!");
+
+  // add the text node to the newly created div
+  newDiv.appendChild(newContent);
+
+  // add the newly created element and its content into the DOM
+  const currentDiv = document.getElementById("div1");
+  document.body.insertBefore(newDiv, currentDiv);
+    
 }
 
-
-function DeleteTask() {
-
-}
