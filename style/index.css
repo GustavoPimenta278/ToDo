@@ -3,18 +3,14 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-}
-
-body {
-    font: normal, 15pt, Arial;
-    background-color: rgba(0, 0, 0, 0.89);
-    color: rgba(255, 255, 255, 0.911);
+    box-sizing: border-box;
 }
 
 header {
     width: 100vw;
     height: 115px;
     border-bottom: solid 1px rgba(255, 255, 255, 0.781);
+    background-color: rgba(0, 0, 0, 0.89);
     font-family: 'Poppins';
 }
 
@@ -64,6 +60,15 @@ header nav span {
     vertical-align: middle;
 }
 
+header nav #inputAddBox {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: #edeef0;
+    border-radius: 4px;
+    padding: 10px;
+}
+
 header nav .ButtonAdd {
     background-color: #09f809b7;
     color: #FFF;
@@ -83,4 +88,46 @@ header nav .ButtonDelete {
     padding: 10px 20px;
     border-radius: 4px;
     font-weight: bold;
+}
+
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.89);
+    padding: 10px;
+}
+
+.todoList {
+    width: 100%;
+    max-width: 540px;
+    background-color: #FFF;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+ul li {
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 5px;
+    background-image: url(assets/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 12px;
+}
+
+ul li.checked::before {
+    background-image: url(assets/checked.png);
 }
