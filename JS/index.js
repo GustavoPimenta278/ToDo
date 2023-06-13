@@ -1,21 +1,49 @@
 const createTaskButton = document.getElementsByClassName("ButtonAdd")
 const deleteTaskButton = document.getElementsByClassName("ButtonDelete")
-
-const newTask = document.createElement("div")
+const listContainer = document.getElementById("listContainer")
+const inputBox = document.getElementById("inputAddBox")
 
 function createTask() {
-     // create a new div element
-  const newDiv = document.createElement("div");
+  if (inputBox.value === '') {
+    alert("O campo de tarefa não pode ser nulo!")
 
-  // and give it some content
-  const newContent = document.createTextNode("Hi there and greetings!");
+  } else {
+    let li = document.createElement("li")
+    li.innerHTML = inputBox.value
+    listContainer.appendChild(li)
 
-  // add the text node to the newly created div
-  newDiv.appendChild(newContent);
-
-  // add the newly created element and its content into the DOM
-  const currentDiv = document.getElementById("div1");
-  document.body.insertBefore(newDiv, currentDiv);
+    let span = document.createElement("span")
+    span.innerHTML = "\u00d7"
+    li.appendChild(span)
     
+    
+  }
+
+  saveData()
+  inputBox.value = ""
+  inputBox.focus()
+
 }
 
+listContainer.addEventListener("click", function(e) {
+  if (e.target.tagName === "LI") {
+    e.target.classList.toggle("checked")
+
+  } else if (e.target.tagName.remove === "SPAN") {
+    e.target.parentElement.remove();
+
+  }
+}, false)
+
+
+function saveData() {
+  localStorage.setItem("data", listContainer.innerHTML)
+
+}
+
+function showTask() {
+  listContainer.innerHTML = localStorage.getItem("data")
+
+}
+
+showTask()
