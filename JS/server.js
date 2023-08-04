@@ -32,12 +32,7 @@ const principalDir = path.resolve(__dirname, '..');
 app.use(express.static(path.join(principalDir, 'public')))
 
 app.get('/', (req, res) => {
-    const options = {
-        root: path.join(__dirname, '..', 'views')
-    }
-
-    const HTMLFile = 'index.html'
-    res.sendFile(HTMLFile, options)
+    res.sendFile(`${principalDir}/views/index.html`)
 })
 
 
