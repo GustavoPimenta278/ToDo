@@ -25,21 +25,24 @@ try {
 }
 
 
+const principalDir = path.resolve(__dirname, '..');
 
-
-const principalDir = path.resolve(__dirname, '..')
-const styleDir = `${principalDir}/style/index.css`
-
-
-console.log(styleDir)
 
 // Define a pasta onde os arquivos estáticos (CSS, imagens, etc.) serão servidos
-app.use(express.static(path.join(styleDir, '/style/index.css')))
+app.use(express.static(path.join(principalDir, 'public')))
 
 app.get('/', (req, res) => {
-    res.sendFile(`${principalDir}/index.html`)
-    
+    const options = {
+        root: path.join(__dirname, '..', 'views')
+    }
+
+    const HTMLFile = 'index.html'
+    res.sendFile(HTMLFile, options)
 })
 
 
-app.listen(8024, () => {console.log("Server is Running!")})
+
+app.listen(8024, (err) => {
+    if (err) console.log(err);
+    console.log("Server Open!", );
+});
