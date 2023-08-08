@@ -25,14 +25,13 @@ try {
 }
 
 
-const principalDir = path.resolve(__dirname, '..');
 
 
-// Define a pasta onde os arquivos estáticos (CSS, imagens, etc.) serão servidos
-app.use(express.static(path.join(principalDir, 'public')))
+// Define a pasta onde os arquivos estáticos (CSS, imagens, JS, etc...) serão servidos
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
-    res.sendFile(`${principalDir}/views/index.html`)
+    res.sendFile(`${__dirname}/views/index.html`)
 })
 
 
